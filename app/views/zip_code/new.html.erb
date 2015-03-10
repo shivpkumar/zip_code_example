@@ -1,0 +1,10 @@
+<!-- Taken directly from http://guides.rubyonrails.org/action_controller_overview.html#the-flash -->
+<% flash.each do |name, message| %>
+  <%= content_tag(:div, message, class: name) %>
+<% end %>
+
+<%= form_tag('/check', method: 'post') do %>
+  <%= label_tag(:zip_code, 'Zip code:') %>
+  <%= text_field_tag(:zip_code) %>
+  <%= submit_tag('Check') %>
+<% end %>
