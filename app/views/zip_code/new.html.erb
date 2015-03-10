@@ -1,10 +1,9 @@
-<!-- Taken directly from http://guides.rubyonrails.org/action_controller_overview.html#the-flash -->
-<% flash.each do |name, message| %>
-  <%= content_tag(:div, message, class: name) %>
-<% end %>
+<%= content_tag(:div, 'Invalid zip code', id: 'invalid', style: 'display: none;') %>
 
-<%= form_tag('/check', method: 'post') do %>
+<%= form_tag('/check', method: 'post', id: 'zip-code-form') do %>
   <%= label_tag(:zip_code, 'Zip code:') %>
   <%= text_field_tag(:zip_code) %>
   <%= submit_tag('Check') %>
 <% end %>
+
+<%= content_tag(:div, 'Place order form here', id: 'order-form', style: 'display: none;') %>
